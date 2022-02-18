@@ -57,7 +57,7 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 6) ### Set up your Databases
     - create a symbolic link in your Atlas database directory for "GTDB_V06" and "EggNOG_V5"
     - databases can be found at /isilon/reference-databases/
-    - ex code if in your Atlas working directory "ln -s /isilon/reference-databases/gtdb/release202    databases/GTDB_V06"
+    - example code (if in your Atlas working directory) "ln -s /isilon/reference-databases/gtdb/release202    databases/GTDB_V06"
 
 7) ### Cluster Configuration
     - Please start by adding Atlas' cluster configuration steps  [Cluster Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#set-up-of-cluster-execution)
