@@ -1,0 +1,10 @@
+restart-times: 2 #modified from '0' 2022-02-03 -kurt
+cluster-config: "/home/AAFC-AAC/clarkeku/.config/snakemake/cluster/cluster_config.yaml" #abs path
+cluster: "scheduler.py" #"sge-submit.py" #scheduler.py also seems to work. 
+cluster-status: "sge-status.py" #
+max-jobs-per-second: 10
+max-status-checks-per-second: 10
+cores: 20 # how many jobs you want to submit to your cluster queue
+local-cores: 1
+rerun-incomplete: true  # recomended for cluster submissions
+keep-going: false
