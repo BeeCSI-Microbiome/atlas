@@ -3,7 +3,7 @@ channels:
     - bioconda
     - defaults
 dependencies:
-     - diamond=2.0.6
+    - diamond=2.0.6
     - eggnog-mapper=2.1
 
 
