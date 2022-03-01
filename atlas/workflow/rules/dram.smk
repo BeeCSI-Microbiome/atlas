@@ -7,16 +7,16 @@ def get_dram_config(wildcards):
 
 rule dram_download:
     output:
-        dbdir=directory(f"{DBDIR}/Dram/"),
+        dbdir=directory(f"{DBDIR}/Dram/"), 
         config=f"{DBDIR}/DRAM.config",
     threads: config["threads"]
     resources:
         mem=config["mem"],
         time=config["runtime"]["default"],
     log:
-        "logs/dram/download_dram.log",
+        "log/dram/download_dram.log",
     benchmark:
-        "logs/benchmarks/dram/download_dram.tsv"
+        "log/benchmarks/dram/download_dram.tsv"
     conda:
         "../envs/dram.yaml"
     shell:
@@ -26,11 +26,11 @@ rule dram_download:
         " --verbose "
         " --skip_uniref "
         " --viral_loc /isilon/reference-databases/DRAM/database_files/viral.1.protein.faa.gz "
-        " --gene_ko_link_loc /isilon/reference-databases/ftp.kegg.net/kegg/genes/links/genes_ko.list.gz "
         " --kegg_loc /isilon/reference-databases/ftp.kegg.net/kegg/genes/fasta/prokaryotes.pep.gz "
-        " &> {log} "
+        " --gene_ko_link_loc /isilon/reference-databases/ftp.kegg.net/kegg/genes/links/genes_ko.list.gz "
+         " &> {log} "
         " ; "
-        " DRAM-setup.py export_config --output_file {output.config}"
+        " DRAM-setup.py export_config --output_file {output.config} " 
 
 
 localrules:
@@ -46,7 +46,8 @@ rule DRAM_set_db_loc:
     conda:
         "../envs/dram.yaml"
     shell:
-        "DRAM-setup.py import_config --config_loc {input}"
+        "DRAM-setup.py import_config --config_loc {DBDIR}/DRAM.config" # or {input.get_dram_config}
+    #   "DRAM-setup.py import_config --config_loc {input}" # or {input.get_dram_config}
 
 
 rule DRAM_annotate:
@@ -66,16 +67,15 @@ rule DRAM_annotate:
     params:
         extra=config.get("dram_extra", ""),
     log:
-        "logs/dram/run_dram/{genome}.log",
+        "log/dram/run_dram/{genome}.log",
     benchmark:
-        "logs/benchmarks/dram/run_dram/{genome}.tsv"
+        "log/benchmarks/dram/run_dram/{genome}.tsv"
     shell:
         " DRAM.py annotate "
         " --input_fasta {input.fasta}"
         " --output_dir {output.outdir} "
         " --threads {threads} "
-        " --min_contig_size {config.minimum_contig_length} "
-        " {params.extra} "
+        #" {params.extra} "
         " --verbose &> {log}"
         #" --gtdb_taxonomy {input.gtdb_dir}/{params.gtdb_file} "
         #" --checkm_quality {input.checkm} "
@@ -138,7 +138,7 @@ rule DRAM_destill:
     conda:
         "../envs/dram.yaml"
     log:
-        "logs/dram/distil.log",
+        "log/dram/distil.log",
     shell:
         " DRAM.py distill "
         " --input_file {input[0]}"
@@ -160,7 +160,7 @@ rule get_all_modules:
     conda:
         "../envs/dram.yaml"
     log:
-        "logs/dram/get_all_modules.log",
+        "log/dram/get_all_modules.log",
     script:
         "../scripts/DRAM_get_all_modules.py"
 
