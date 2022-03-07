@@ -62,3 +62,8 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 7) ### Cluster Configuration
     - Please start by adding Atlas' cluster configuration steps  [Cluster Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#set-up-of-cluster-execution)
     - After that you can copy the provided files from "cluster profile files" into the ~/.config/snakemake/cluster (where "cluster" = what you called your cluster profile).
+
+# Abricate Extension
+    - Currently the abricate "extension" requires using the additionally provided config file in "modified config files" else it will not work.
+    - Currently the abricate extension runs all databases this is intended to be changed using the config file in the future. 
+    - The addition of the abricate.yaml, abricate.smk, the modified config file, and the changes to the Snakefile are all that is required to use this extension. So it can be easily added to a current Atlas (2.8.1) pipeline as of 2022-03-07. 
