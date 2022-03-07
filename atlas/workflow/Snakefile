@@ -224,7 +224,7 @@ include: "rules/sra.smk"
 include: "rules/gtdbtk.smk"
 include: "rules/cobinning.smk"
 include: "rules/dram.smk"
-
+include: "rules/abricate.smk" # databases hard coded here 
 
 CONDAENV = "envs"  # overwrite definition in download.smk
 
@@ -259,7 +259,7 @@ rule genecatalog:
         temp(touch("finished_genecatalog")),
 
 
-def get_genome_annotations():
+def get_genome_annotations(): # I think I may have to put an abricate output file here
 
     annotation_file_names = {
         "cat_taxonomy": "genomes/taxonomy/taxonomy.tsv",
@@ -271,6 +271,7 @@ def get_genome_annotations():
         "genes": "genomes/annotations/genes/predicted",
         "kegg_modules": "genomes/annotations/dram/kegg_modules.tsv",
         "dram": "genomes/annotations/dram/distil",
+        #"abricate": "genomes/annotations/abricate", # <!> I think I have to put this somewhere else tied to DRAM for all.
     }
 
     annotations_requested = config["annotations"]
@@ -297,6 +298,7 @@ rule genomes:
         "genomes/clustering/allbins2genome.tsv",
         * get_genome_annotations(),
         "finished_binning",
+        "finished_abricate"
     output:
         temp(touch("finished_genomes")),
 
