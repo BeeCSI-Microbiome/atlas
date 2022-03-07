@@ -219,7 +219,6 @@ virtual_disk: /dev/shm           # But you need 37G extra ram
 #########################
 # Abricate
 #########################
-
 abricate_id: 80 # default minimum DNA % identity
 abricate_coverage: 80 # default minimum DNA % coverage
 
