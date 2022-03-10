@@ -48,26 +48,27 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 - Update to new Snakemake version and use cool reports.
 
 # Biocluster Specific Instructions
-1) ### Follow Atlas' main page for installation procedures [Installation Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#getting-started)
+1) ## Please review installing conda on biolcuster if you have not already and install conda.
+ 
+2) ### Follow Atlas' main page for installation procedures [Installation Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#getting-started)
 
-3) ### Please review installing conda on biolcuster if you have not already. 
+3) ### After Atlas is installed please initialize a directory [Initialization Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#start-a-new-project)
 
-5) ### After atlas is installed please initialize a directory [Initialization Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#start-a-new-project)
-
-6) ### Set up your Databases
+4) ### Set up your Databases
     - create a symbolic link in your Atlas database directory for "GTDB_V06" and "EggNOG_V5"
     - databases can be found at /isilon/reference-databases/
     - example code (if in your Atlas working directory) "ln -s /isilon/reference-databases/gtdb/release202    databases/GTDB_V06"
 
-7) ### Modify your config file
+5) ### Modify your config file
     - Add in any host / filter genomes to the config file path.
     - Add in any additional modifications for extensions (see the abricate extension for more details).
 
-8) ### Cluster Configuration
+6) ### Cluster Configuration
     - Please start by adding Atlas' cluster configuration steps  [Cluster Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#set-up-of-cluster-execution)
     - After that you can copy the provided files from "cluster profile files" into the ~/.config/snakemake/cluster (where "cluster" = what you called your cluster profile).
 
 # Abricate Extension
+    - You can find the abricate extension and relatedc files on the "atlas_abricate_extension" branch. 
     - Currently the abricate "extension" requires using the additionally provided config file in "modified config files" else it will not work.
     - Currently the abricate extension runs all databases this is intended to be changed using the config file in the future. 
     - The addition of the abricate.yaml, abricate.smk, the modified config file, and the changes to the Snakefile are all that is required to use this extension. So it can be easily added to a current Atlas (2.8.1) pipeline as of 2022-03-07. 
