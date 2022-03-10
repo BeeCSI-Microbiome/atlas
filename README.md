@@ -48,6 +48,8 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 - Update to new Snakemake version and use cool reports.
 
 # Biocluster Specific Instructions
+- Detailed instructions can be found [here](https://github.com/BeeCSI-Microbiome/atlas/blob/master/Biocluster%20step-by-step%20Guide.md)
+
 1) ### Please review installing conda on biolcuster if you have not already install conda.
  
 2) ### Follow Atlas' main page for installation procedures [Installation Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#getting-started)
