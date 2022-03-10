@@ -59,7 +59,11 @@ Here are some ideas I work or want to work on when I have time. If you want to c
     - databases can be found at /isilon/reference-databases/
     - example code (if in your Atlas working directory) "ln -s /isilon/reference-databases/gtdb/release202    databases/GTDB_V06"
 
-7) ### Cluster Configuration
+7) ### Modify your config file
+    - Add in any host / filter genomes to the config file path.
+    - Add in any additional modifications for extensions (see the abricate extension for more details).
+
+8) ### Cluster Configuration
     - Please start by adding Atlas' cluster configuration steps  [Cluster Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#set-up-of-cluster-execution)
     - After that you can copy the provided files from "cluster profile files" into the ~/.config/snakemake/cluster (where "cluster" = what you called your cluster profile).
 
