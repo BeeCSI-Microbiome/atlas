@@ -47,8 +47,7 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 - Cloud execution
 - Update to new Snakemake version and use cool reports.
 
-# Biocluster Specific Instructions
-- Detailed instructions can be found [here](https://github.com/BeeCSI-Microbiome/atlas/blob/master/Biocluster%20step-by-step%20Guide.md)
+# Biocluster Specific Instructions - *(Detailed Instructions [Here](https://github.com/BeeCSI-Microbiome/atlas/blob/master/Biocluster%20step-by-step%20Guide.md))*
 
 1) ### Please review installing conda on biolcuster if you have not already install conda.
  
