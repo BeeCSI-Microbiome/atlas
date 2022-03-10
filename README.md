@@ -56,7 +56,7 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 
 4) ### Set up your Databases
     - create a symbolic link in your Atlas database directory for "GTDB_V06" and "EggNOG_V5"
-    - databases can be found at /isilon/reference-databases/
+    - databases can be found at /isilon/reference-databases/databases/
     - example code (if in your Atlas working directory) "ln -s /isilon/reference-databases/gtdb/release202    databases/GTDB_V06"
 
 5) ### Modify your config file
