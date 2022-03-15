@@ -73,3 +73,7 @@ Here are some ideas I work or want to work on when I have time. If you want to c
     - Currently the abricate "extension" requires using the additionally provided config file in "modified config files" else it will not work.
     - Currently the abricate extension runs all databases this is intended to be changed using the config file in the future. 
     - The addition of the abricate.yaml, abricate.smk, the modified config file, and the changes to the Snakefile are all that is required to use this extension. So it can be easily added to a current Atlas (2.8.1) pipeline as of 2022-03-07. 
+
+## To Do
+- add information for Atlas Analyze https://github.com/metagenome-atlas/atlas_analyze (2022-03-15)
+- Integrate Abricate into main branch (2022-03-15)
