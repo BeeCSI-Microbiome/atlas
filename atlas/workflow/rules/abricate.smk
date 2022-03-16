@@ -27,7 +27,9 @@ rule abricate_MAG_annotation:
     benchmark:
         "log/benchmarks/abricate/MAGs/{genome}.{database}.MAGs.tsv"
     shell:
-        " abricate --minid {params.id} --mincov {params.coverage} --threads {threads} --quiet --db {wildcards.database} {input.fasta} >> genomes/annotations/abricate/MAGs/{wildcards.genome}/mag_{wildcards.database}_{wildcards.genome}.tab >> genomes/annotations/abricate/summary_mag_{wildcards.database}.tab" 
+        " abricate --minid {params.id} --mincov {params.coverage} --threads {threads} --quiet --db {wildcards.database} {input.fasta} >> genomes/annotations/abricate/MAGs/{wildcards.genome}/mag_{wildcards.database}_{wildcards.genome}.tab "
+        " ; "
+        " cat genomes/annotations/abricate/MAGs/{wildcards.genome}/mag_{wildcards.database}_{wildcards.genome}.tab >> genomes/annotations/abricate/summary_mag_{wildcards.database}.tab " 
 
 
 rule abricate_bin_annotation:
@@ -49,7 +51,9 @@ rule abricate_bin_annotation:
     benchmark:
         "log/benchmarks/abricate/bins/{sample}.{database}.tsv"
     shell:
-        " abricate --minid {params.id} --mincov {params.coverage} --threads {threads} --quiet --db {wildcards.database} {input.bins}/* >> genomes/annotations/abricate/bins/summary_bin_{wildcards.database}_{wildcards.sample}.tab >> genomes/annotations/abricate/summary_bin_{wildcards.database}.tab" 
+        " abricate --minid {params.id} --mincov {params.coverage} --threads {threads} --quiet --db {wildcards.database} {input.bins}/* >> genomes/annotations/abricate/bins/summary_bin_{wildcards.database}_{wildcards.sample}.tab "
+        " ; "
+        " cat genomes/annotations/abricate/bins/summary_bin_{wildcards.database}_{wildcards.sample}.tab >> genomes/annotations/abricate/summary_bin_{wildcards.database}.tab " 
 
 
 rule abricate_contig_annotation:
@@ -71,8 +75,9 @@ rule abricate_contig_annotation:
     benchmark:
         "log/benchmarks/abricate/{sample}.{database}.contigs.tsv"
     shell:
-        " abricate --minid {params.id} --mincov {params.coverage} --threads {threads} --quiet --db {wildcards.database} {input.contigs} >> genomes/annotations/abricate/{wildcards.sample}/contig_{wildcards.database}_{wildcards.sample}.tab >> genomes/annotations/abricate/summary_contig_{wildcards.database}.tab" 
- 
+        " abricate --minid {params.id} --mincov {params.coverage} --threads {threads} --quiet --db {wildcards.database} {input.contigs} >> genomes/annotations/abricate/{wildcards.sample}/contig_{wildcards.database}_{wildcards.sample}.tab " 
+        " ; "
+        " cat genomes/annotations/abricate/{wildcards.sample}/contig_{wildcards.database}_{wildcards.sample}.tab >> genomes/annotations/abricate/summary_contig_{wildcards.database}.tab "
 
 def get_all_abricate(wildcards): 
     
