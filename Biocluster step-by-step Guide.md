@@ -18,7 +18,7 @@
 1. Navigate to your database folder specified in the initialization step (if you left this as "databases" it will be in your Atlas projects working directory).
 2. Create a symbolic link to the EggNog database by entering the following: ln -s /isilon/common/reference/databases/EggNOG_V5/EggNOG_V5/ EggNOG_V5
 3. Create a symbolic link to the GTDB database by entering the following: ln -s /isilon/common/reference/databases/gtdb/release202/ GTDB_V06
-4. Copy the most recent DRAM config file to the database folder: cp /isilon/reference-databases/databases/dram_db_21Feb2022/config_dram_db_21Feb2022.txt DRAM.config
+4. Copy the most recent DRAM config file to the database folder: cp /isilon/common/reference/databases/dram_db_21Feb2022/config_dram_db_10March2022.txt DRAM.config
 
 
 ## Modify Your Config File 
