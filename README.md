@@ -57,8 +57,8 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 
 4) ### Set up your Databases
     - create a symbolic link in your Atlas database directory for "GTDB_V06" and "EggNOG_V5"
-    - databases can be found at /isilon/reference-databases/databases/
-    - example code (if in your Atlas working directory) "ln -s /isilon/reference-databases/gtdb/release202    databases/GTDB_V06"
+    - databases can be found at /isilon/common/reference/databases/
+    - example code (if in your Atlas working directory) "ln -s /isilon/common/reference/databases/gtdb/release202    databases/GTDB_V06"
 
 5) ### Modify your config file
     - Add in any host / filter genomes to the config file path.
@@ -69,7 +69,7 @@ Here are some ideas I work or want to work on when I have time. If you want to c
     - After that you can copy the provided files from "cluster profile files" into the ~/.config/snakemake/cluster (where "cluster" = what you called your cluster profile).
 
 # Abricate Extension
-    - You can find the abricate extension and relatedc files on the "atlas_abricate_extension" branch. 
+    - You can find the abricate extension and related files on the "atlas_abricate_extension" branch. 
     - Currently the abricate "extension" requires using the additionally provided config file in "modified config files" else it will not work.
     - Currently the abricate extension runs all databases this is intended to be changed using the config file in the future. 
     - The addition of the abricate.yaml, abricate.smk, the modified config file, and the changes to the Snakefile are all that is required to use this extension. So it can be easily added to a current Atlas (2.8.1) pipeline as of 2022-03-07. 
