@@ -4,7 +4,8 @@
 1. Make sure you have **conda** installed. If not see the biocluster guide on how to do that. 
 2. Follow Atlas' [Installation Guide](https://metagenome-atlas.readthedocs.io/en/latest/usage/getting_started.html#getting-started) as of [2022-03-10] the guide is approximately the following...
 - In your terminal enter: conda create –y –n atlasenv metagenome-atlas
-- Note: You can also clone either ours or Atlas' main repo via github as an alternative if there is a problem with the above version. 
+- Note: You can also clone either ours or Atlas' main repo via github as an alternative if there is a problem with the above version.
+- Additionally, if you are having problems with the main Branch of ATLAS, our version often has minor "bug" fixes and workarounds as required.  
 
 
 ## Initialize Your Atlas Directory
