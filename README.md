@@ -58,7 +58,7 @@ Here are some ideas I work or want to work on when I have time. If you want to c
 4) ### Set up your Databases
     - create a symbolic link in your Atlas database directory for "GTDB_V06" and "EggNOG_V5"
     - databases can be found at /isilon/common/reference/databases/
-    - example code (if in your Atlas working directory) "ln -s /isilon/common/reference/databases/gtdb/release202    databases/GTDB_V06"
+    - example code (if in your Atlas working directory) 
 
 5) ### Modify your config file
     - Add in any host / filter genomes to the config file path.
