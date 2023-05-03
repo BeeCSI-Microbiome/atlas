@@ -27,18 +27,10 @@ atlas init --db-dir databases {path/to/fastq_files}
 - As of [2022-03-10] several of the Atlas databases are not downloading correctly due to deadlinks. To save time, space, and headaches we recommend following the procedure below. 
 1. Navigate to your database folder specified in the initialization step (if you left this as "`databases`" it will be in your Atlas projects working directory).
 2. Create a symbolic link to the EggNog database by entering the following:  
-```bash
-ln -s /isilon/common/reference/databases/EggNOG_V5/EggNOG_V5/ EggNOG_V5
-```
-3. Create a symbolic link to the GTDB database by entering the following:  
-```bash
-ln -s /isilon/common/reference/databases/gtdb/release202/ GTDB_V06
-```
-4. Copy the most recent DRAM config file to the database folder:  
-```bash
-cp /isilon/common/reference/databases/DRAM_db/DRAM_db_20220415/DRAM_db_20220415_without_uniref.conf DRAM.config
-```
 
+3. Create a symbolic link to the GTDB database by entering the following:  
+
+4. Copy the most recent DRAM config file to the database folder:  
 
 ## Modify Your `config.yaml` File 
 1. Please review the `config.yaml` file in your Atlas directory and double check that all of the parameters are correct.
@@ -54,7 +46,7 @@ cookiecutter --output-dir ~/.config/snakemake https://github.com/metagenome-atla
 ```
 - Enter in Terminal:  
 ```bash
-cd /home/AAFC-AAC/{$USER}/.config/snakemake/cluster
+cd ${PATH}/${USER}/.config/snakemake/cluster
 ```
 - Copy, make, or overwrite the **`key_mapping.yaml, sge-jobscript.sh, sge-status.py, sge-submit.py, cluster.yaml, cluster_config.yaml, and config.yaml`** files from [here](https://github.com/BeeCSI-Microbiome/atlas/tree/master/cluster%20profile%20files) to the directory you have just navigated to. If you want to download these files from the above mentioned location, you can enter the following lines into your terminal:
 ```bash
